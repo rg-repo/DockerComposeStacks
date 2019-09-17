@@ -1,0 +1,13 @@
+version: '3.3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    restart: always
+    volumes:
+    # Where our data will be persisted
+      - ./mongo-vol:/data/db
+    ports:
+      # <Port exposed> : <Port running inside container>
+      - "27017:27017" 
+    
